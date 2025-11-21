@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأسعار - صالون لمسة إبداعية</title>
+<style>
+body { margin:0; font-family: sans-serif; direction: rtl; background: #111; color: #fff; }
+.navbar { background: #222; padding:15px 0; text-align:center; }
+.logo { font-size:32px; font-weight:800; display:block; margin-bottom:10px; color: gold; }
+.navbar ul { list-style:none; padding:0; margin:0; display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
+.navbar ul li a { text-decoration:none; color: gold; font-size:20px; transition:0.3s; }
+.navbar ul li a:hover { color:#fff; }
+.container { padding:50px 20px; text-align:center; }
+.container h1 { font-size:36px; margin-bottom:30px; color: gold; }
+.table-prices { width:100%; max-width:700px; margin:0 auto; border-collapse: collapse; }
+.table-prices th, .table-prices td { border:1px solid gold; padding:12px 15px; text-align:center; }
+.table-prices th { background: #222; color: gold; font-size:18px; }
+.table-prices td { background:#1c1c1c; color:#fff; font-size:16px; }
+footer { background:#222; padding:20px; text-align:center; font-size:18px; }
+@media (max-width:768px) {
+    .logo { font-size:28px; }
+    .navbar ul li a { font-size:18px; }
+    .container h1 { font-size:28px; }
+    .table-prices th, .table-prices td { font-size:16px; padding:10px; }
+}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+    <span class="logo">صالون لمسة إبداعية</span>
+    <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="services.html">الخدمات</a></li>
+        <li><a href="prices.html">الأسعار</a></li>
+        <li><a href="booking.html">الحجز</a></li>
+        <li><a href="team.html">الفريق</a></li>
+        <li><a href="contact.html">اتصل بنا</a></li>
+    </ul>
+</header>
+
+
+<div class="container">
+    <h1>جدول الأسعار</h1>
+    <table class="table-prices">
+        <tr>
+            <th>الخدمة</th>
+            <th>السعر</th>
+        </tr>
+        <tr>
+            <td>قص الشعر</td>
+            <td>15 ريال</td>
+        </tr>
+        <tr>
+            <td>حلاقة دقن</td>
+            <td>15 ريال</td>
+        </tr>
+        <tr>
+            <td>شمع للوجه</td>
+            <td>25 ريال</td>
+        </tr>
+        <tr>
+            <td>تنظيف بشرة يبدأ</td>
+            <td>25 ريال</td>
+        </tr>
+        <tr>
+            <td>صبعة اللحية</td>
+            <td>25 ريال</td>
+        </tr>
+        <tr>
+            <td>صبغة شعر</td>
+            <td>30 ريال</td>
+        </tr>
+    </table>
+</div>
+
+<footer>
+    جميع الحقوق محفوظة © صالون لمسة إبداعية
+</footer>
+
+</body>
+</html>

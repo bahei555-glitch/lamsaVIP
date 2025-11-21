@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حجز موعد - صالون لمسة إبداعية</title>
+<style>
+body { margin:0; font-family:sans-serif; direction:rtl; background:#111; color:#fff; }
+.navbar { background:#222; padding:15px 0; text-align:center; }
+.logo { font-size:32px; font-weight:800; display:block; margin-bottom:10px; color: gold; }
+.navbar ul { list-style:none; padding:0; margin:0; display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
+.navbar ul li a { text-decoration:none; color: gold; font-size:20px; transition:0.3s; }
+.navbar ul li a:hover { color:#fff; }
+.container { padding:50px 20px; display:flex; justify-content:center; align-items:center; flex-direction:column; }
+.container h1 { font-size:36px; margin-bottom:30px; color: gold; text-align:center; }
+form {
+    background:#222;
+    padding:30px;
+    border-radius:12px;
+    display:flex;
+    flex-direction:column;
+    align-items:center; /* محاذاة كل العناصر للمنتصف */
+    gap:15px; /* مسافة متساوية بين الحقول */
+    width:100%;
+    max-width:500px;
+}
+form input, form select, form textarea {
+    width:100%;
+    max-width:400px;
+    padding:12px;
+    border-radius:8px;
+    border:none;
+    font-size:16px;
+    text-align:center; /* محاذاة النص داخل الحقول للمنتصف */
+    box-sizing:border-box;
+}
+form button {
+    width:100%;
+    max-width:400px;
+    padding:15px;
+    background:gold;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:18px;
+    cursor:pointer;
+    color:#111;
+    transition:0.3s;
+}
+form button:hover { transform:scale(1.05); box-shadow:0 6px 20px rgba(255,215,0,0.6); }
+footer { background:#222; padding:20px; text-align:center; font-size:18px; margin-top:30px; }
+@media(max-width:768px){ 
+    .logo{font-size:28px;} 
+    .navbar ul li a{font-size:18px;} 
+    .container h1{font-size:28px;} 
+    form input, form select, form textarea, form button{font-size:16px;} 
+}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+    <span class="logo">صالون لمسة إبداعية</span>
+    <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="services.html">الخدمات</a></li>
+        <li><a href="prices.html">الأسعار</a></li>
+        <li><a href="booking.html">الحجز</a></li>
+        <li><a href="team.html">الفريق</a></li>
+        <li><a href="contact.html">اتصل بنا</a></li>
+    </ul>
+</header>
+
+<div class="container">
+    <h1>احجز موعدك الآن</h1>
+    <form id="bookingForm">
+        <input type="text" placeholder="الاسم الكامل" required>
+        <input type="tel" placeholder="رقم الجوال" required>
+        <input type="date" required>
+        <input type="time" required>
+
+        <select id="barberSelect" required>
+            <option value="">اختر الحلاق</option>
+            <option value="السيد" data-phone="0548840672">السيد</option>
+            <option value="محمد" data-phone="0565299759">محمد</option>
+            <option value="عبدالله" data-phone="0566863776">عبدالله</option>
+            <option value="سمير" data-phone="0548840672">سمير</option>
+        </select>
+
+        <textarea placeholder="ملاحظات إضافية" rows="4"></textarea>
+        <button type="button" onclick="sendWhatsApp()">إرسال عبر واتساب</button>
+    </form>
+</div>
+
+<script>
+function sendWhatsApp() {
+    const form = document.getElementById('bookingForm');
+    const name = form.querySelector('input[type="text"]').value;
+    const phone = form.querySelector('input[type="tel"]').value;
+    const date = form.querySelector('input[type="date"]').value;
+    const time = form.querySelector('input[type="time"]').value;
+    const barberSelect = document.getElementById('barberSelect');
+    const barber = barberSelect.value;
+    const barberPhone = barberSelect.selectedOptions[0].dataset.phone;
+    const notes = form.querySelector('textarea').value;
+
+    if (!name || !phone || !date || !time || !barber) {
+        alert('يرجى ملء جميع الحقول المطلوبة');
+        return;
+    }
+
+    const managerPhone = "0509084202"; // رقم المدير ثابت
+    const message = `مرحباً ${barber}، لدي حجز:\nالاسم: ${name}\nالجوال: ${phone}\nالتاريخ: ${date}\nالوقت: ${time}\nملاحظات: ${notes}\n\n*هذه الرسالة تصل أيضًا للمدير*`;
+
+    const urlBarber = `https://wa.me/${barberPhone}?text=${encodeURIComponent(message)}`;
+    const urlManager = `https://wa.me/${managerPhone}?text=${encodeURIComponent(message)}`;
+
+    window.open(urlBarber, '_blank');
+    window.open(urlManager, '_blank');
+}
+</script>
+
+<footer>
+    جميع الحقوق محفوظة © صالون لمسة إبداعية
+</footer>
+
+</body>
+</html>

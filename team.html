@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فريق الحلاقين - صالون لمسة إبداعية</title>
+<style>
+body { margin:0; font-family:sans-serif; direction:rtl; background:#111; color:#fff; }
+.navbar { background:#222; padding:15px 0; text-align:center; }
+.logo { font-size:32px; font-weight:800; display:block; margin-bottom:10px; color: gold; }
+.navbar ul { list-style:none; padding:0; margin:0; display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
+.navbar ul li a { text-decoration:none; color: gold; font-size:20px; transition:0.3s; }
+.navbar ul li a:hover { color:#fff; }
+.container { padding:50px 20px; display:flex; flex-direction:column; align-items:center; gap:30px; }
+.container h1 { font-size:36px; color: gold; text-align:center; }
+.team-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:20px; width:100%; max-width:1000px; }
+.card { background:#222; border-radius:12px; padding:20px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:10px; }
+.card img { width:120px; height:120px; border-radius:50%; object-fit:cover; }
+.card h3 { font-size:22px; margin:0; color:gold; }
+.card p { margin:0; font-size:16px; }
+.card button { padding:10px 15px; background:gold; border:none; border-radius:8px; font-weight:bold; cursor:pointer; transition:0.3s; color:#111; }
+.card button:hover { transform:scale(1.05); box-shadow:0 6px 20px rgba(255,215,0,0.6); }
+footer { background:#222; padding:20px; text-align:center; font-size:18px; margin-top:30px; }
+@media(max-width:768px){ .logo{font-size:28px;} .navbar ul li a{font-size:18px;} .container h1{font-size:28px;} .card h3{font-size:20px;} }
+</style>
+</head>
+<body>
+
+<header class="navbar">
+    <span class="logo">صالون لمسة إبداعية</span>
+    <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="services.html">الخدمات</a></li>
+        <li><a href="prices.html">الأسعار</a></li>
+        <li><a href="booking.html">الحجز</a></li>
+        <li><a href="team.html">الفريق</a></li>
+        <li><a href="contact.html">اتصل بنا</a></li>
+    </ul>
+</header>
+
+<div class="container">
+    <h1>فريق الحلاقين</h1>
+    <div class="team-grid">
+        <div class="card">
+            <img src="e.jpg" alt="السيد">
+            <h3>السيد</h3>
+            <p>0548840672</p>
+            <button onclick="sendWhatsApp('0548840672','السيد')">أرسل واتساب</button>
+        </div>
+        <div class="card">
+            <img src="m.jpg" alt="محمد">
+            <h3>محمد</h3>
+            <p>0565299759</p>
+            <button onclick="sendWhatsApp('0500000001','محمد')">أرسل واتساب</button>
+        </div>
+        <div class="card">
+            <img src="a.jpg" alt="عبدالله">
+            <h3>عبدالله</h3>
+            <p>0566863776</p>
+            <button onclick="sendWhatsApp('0566863776','عبدالله')">أرسل واتساب</button>
+        </div>
+        <div class="card">
+            <img src="s.jpg" alt="سمير">
+            <h3>سمير</h3>
+            <p>0548840672</p>
+            <button onclick="sendWhatsApp('0548840672','سمير')">أرسل واتساب</button>
+        </div>
+        <!-- أضف المزيد من الحلاقين بنفس الشكل -->
+    </div>
+</div>
+
+<script>
+function sendWhatsApp(phone, name){
+    const managerPhone = "0509084202"; // رقم المدير
+    const message = `مرحباً ${name}، لدي حجز أو استفسار.`;
+    const urlBarber = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    const urlManager = `https://wa.me/${managerPhone}?text=${encodeURIComponent(message)}`;
+    window.open(urlBarber,'_blank');
+    window.open(urlManager,'_blank');
+}
+</script>
+
+<footer>
+    جميع الحقوق محفوظة © صالون لمسة إبداعية
+</footer>
+
+</body>
+</html>

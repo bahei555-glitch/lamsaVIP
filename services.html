@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خدماتنا - صالون لمسة إبداعية</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+body { margin:0; font-family: sans-serif; direction: rtl; background: #111; color: #fff; }
+.navbar { background: #222; padding: 15px 0; text-align: center; }
+.logo { font-size: 32px; font-weight: 800; display: block; margin-bottom: 10px; color: gold; }
+.navbar ul { list-style: none; padding:0; margin:0; display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
+.navbar ul li a { text-decoration:none; color: gold; font-size:20px; transition:0.3s; }
+.navbar ul li a:hover { color:#fff; }
+.container { padding:50px 20px; text-align:center; }
+.container h1 { font-size:36px; margin-bottom:30px; color: gold; }
+.services-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:25px; margin-top:30px; }
+.service-card { background: #222; padding:20px; border-radius:12px; transition: transform 0.3s, box-shadow 0.3s; }
+.service-card:hover { transform: translateY(-8px); box-shadow:0 8px 20px rgba(255,215,0,0.4); }
+.service-card h3 { color: gold; margin-bottom: 10px; }
+.service-card p { color: #ccc; }
+footer { background: #222; padding:20px; text-align:center; font-size:18px; }
+@media (max-width:768px) {
+    .logo { font-size:28px; }
+    .navbar ul li a { font-size:18px; }
+    .container h1 { font-size:28px; }
+    .services-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+    <span class="logo">صالون لمسة إبداعية</span>
+    <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="services.html">الخدمات</a></li>
+        <li><a href="prices.html">الأسعار</a></li>
+        <li><a href="booking.html">الحجز</a></li>
+        <li><a href="team.html">الفريق</a></li>
+        <li><a href="contact.html">اتصل بنا</a></li>
+    </ul>
+</header>
+
+
+<div class="container">
+    <h1>خدماتنا</h1>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3><i class="fas fa-cut"></i> قص الشعر</h3>
+            <p>أفضل قصات الشعر مع أحدث الأساليب الحديثة.</p>
+        </div>
+        <div class="service-card">
+            <h3><i class="fas fa-blender-phone"></i> الحلاقة</h3>
+            <p>حلاقة دقيقة وأنيقة مع أدوات عالية الجودة.</p>
+        </div>
+        <div class="service-card">
+            <h3><i class="fas fa-beard"></i> تزيين اللحية</h3>
+            <p>تصميم اللحية بأسلوب عصري ومرتب.</p>
+        </div>
+        <div class="service-card">
+            <h3><i class="fas fa-spray-can"></i> العناية بالبشرة</h3>
+            <p>تنظيف وترطيب البشرة لتبدو صحية ونضرة.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    جميع الحقوق محفوظة © صالون لمسة إبداعية
+</footer>
+
+</body>
+</html>
